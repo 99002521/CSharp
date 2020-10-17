@@ -1,0 +1,49 @@
+﻿@model List<MvcRetry.Models.EmpTable>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>GetAllRecords</title>
+</head>
+<body>
+    <h1>----------------------------Records of all the Employees along with their details---------------------------</h1>
+    <hr />
+
+    <nav>
+        <div>
+            @Html.ActionLink("New Registration", "NewEmployee")
+        </div>
+    </nav>
+    <br><br>
+    <div>
+        <table border="1" width="100%">
+            <tr>
+                <th>Employee ID</th>
+                <th>Employee Name</th>
+                <th>Employee Address</th>
+                <th>Employee Salary</th>
+                <td>Options</td>
+            </tr>
+            @foreach (var emp in Model)
+            {
+                <tr>
+                    <td>@emp.EmpID</td>
+                    <td>@emp.EmpName</td>
+                    <td>@emp.EmpAddress</td>
+                    <td>@emp.EmpSalary</td>
+                    <td>
+                        @Html.ActionLink("Edit", "Update", new { id = emp.EmpID })
+
+                        @Html.ActionLink("Delete", "Delete", new { id = emp.EmpID })
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</body>
+</html>

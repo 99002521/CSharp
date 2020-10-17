@@ -1,0 +1,37 @@
+﻿@model MvcRetry.Models.EmpTable
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>NewEmployee</title>
+</head>
+<body>
+    <h1>New Employee Registration</h1>
+    <hr />
+    <div>
+        @using (Html.BeginForm())
+        {
+            <p>
+                Enter the Employee ID: @Html.EditorFor((m) => m.EmpID)
+            </p>
+            <p>
+                Enter name of the Employee: @Html.EditorFor((m) => m.EmpName)
+            </p>
+            <p>
+                Enter the address of the Employee: @Html.EditorFor((m) => m.EmpAddress)
+            </p>
+            <p>
+                Enter the Employee Salary: @Html.EditorFor((m) => m.EmpSalary)
+            </p>
+            <button>Add Employee</button>
+        }
+    </div>
+</body>
+</html>
+

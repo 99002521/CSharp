@@ -1,0 +1,32 @@
+﻿
+@model MvcRetry.Models.EmpTable
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Find</title>
+</head>
+<body>
+    <h1>Details of the Employee to update</h1>
+    <div>
+        @using (Html.BeginForm())
+        {
+            <p>
+                Enter the Employee ID: @Html.EditorFor((m) => m.EmpID)
+            </p>
+            <p>
+                Enter name of the Employee: @Html.EditorFor((m) => m.EmpName)
+            </p>
+            <p>
+                Enter the address of the Employee: @Html.EditorFor((m) => m.EmpAddress)
+            </p>
+            <p>
+                Enter the Employee Salary: @Html.EditorFor((m) => m.EmpSalary)
+            </p>
+            <button>Save Changes</button>
+        }
+    </div>
+</body>
+</html>
